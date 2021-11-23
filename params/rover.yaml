@@ -43,8 +43,8 @@ ekf_filter_node:
                         false, false, false,
                         false, false, false]
 
-        odom0: vectornav/odom # Orientation data from the VectorNav INS, This data is valid even when in a GPS Denied situation.
-        odom0_config: [false, false, false,
+        pose0: vectornav/pose # Orientation data from the VectorNav INS, This data is valid even when in a GPS Denied situation.
+        pose0_config: [false, false, false,
                        true,  true,  true,
                        false, false, false,
                        false, false, false,
@@ -74,7 +74,7 @@ ekf_filter_node:
         odom2: laser_odom # linear and angular velocity informatino from the lidar scan matcher, used when GPS data is not avaliable
         odom2_differential: true
         odom2_config: [true,  true,  true,
-                       true,  true,  true,
+                       false, false, false,
                        false, false, false,
                        false, false, false,
                        false, false, false]
