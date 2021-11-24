@@ -47,17 +47,17 @@ ekf_filter_node:
                        false, false, false]
 
         # Velocity information from the wheel encoders, used only to tell when the vehicle is not moving
-        odom1: odom_raw
-        odom1_config: [false, false, false,
+        odom0: odom_raw
+        odom0_config: [false, false, false,
                        false, false, false,
                        true,  true,  true,
                        false, false, false,
                        false, false, false]
 
         # linear and angular velocity informatino from the lidar scan matcher, used when GPS data is not avaliable
-        odom2: laser_odom
-        odom2_differential: true
-        odom2_config: [true,  true,  true,
+        odom1: laser_odom
+        odom1_differential: true
+        odom1_config: [true,  true,  true,
                        false, false, false,
                        false, false, false,
                        false, false, false,
