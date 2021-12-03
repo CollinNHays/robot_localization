@@ -28,23 +28,7 @@ ekf_filter_node:
         odom_frame: odom            # Defaults to "odom" if unspecified
         base_link_frame: base_link  # Defaults to "base_link" if unspecified
         world_frame: odom           # Defaults to the value of odom_frame if unspecified
-         
 
-        # velocity data from the VectorNav INS, This data is only published when the INS_MODE is == 2 meaning there is GPS signal and the velcoity data is valid
-        twist0: vectornav/velocity_body
-        twist0_config: [false, false, false,
-                        false, false, false,
-                        true,  true,  true,
-                        false, false, false,
-                        false, false, false]
-
-        # Orientation data from the VectorNav INS, This data is valid even when in a GPS Denied situation.
-        pose0: vectornav/pose
-        pose0_config: [false, false, false,
-                       true,  true,  true,
-                       false, false, false,
-                       false, false, false,
-                       false, false, false]
 
         # Velocity information from the wheel encoders, used only to tell when the vehicle is not moving
         odom0: odom_raw
