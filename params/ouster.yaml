@@ -38,7 +38,7 @@ ekf_filter_node:
                        false, false, false,
                        false, false, false]
 
-        # linear and angular velocity informatino from the lidar scan matcher, used when GPS data is not avaliable
+        # Position from the Ouster Scan Matcher. Publishes XY position and Yaw position
         odom1: laser_odom
         odom1_differential: true
         odom1_config: [true,  true,  true,
