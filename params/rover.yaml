@@ -50,16 +50,9 @@ ekf_filter_node:
                        false, false, false,
                        false, false, false]
 
-        imu0: vectornav/imu
-        imu0_config: [false, false, false,
-                      true,  true,  true,
-                      false, false, false,
-                      false, false, false,
-                      false, false, false]
-
         odom1: laser_odom # Linear velocity information from the laser scan matcher, used when GPS data is not avaliable
-        odom1_config: [true,  true,  true,
+        odom1_config: [false, false, false,
                        false, false, false,
-                       false, false, false,
+                       true,  true,  true,
                        false, false, false,
                        false, false, false]
