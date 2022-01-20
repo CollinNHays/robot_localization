@@ -35,15 +35,16 @@ ekf_filter_node:
         #         roll_vel, pitch_vel, yaw_vel,
         #         x_accel , y_accel  , z_accel]
         
-        odom0: laser_odom # Linear velocity information from the laser scan matcher, used when GPS data is not avaliable
+        odom0: odom_raw #Rover Robotics wheel enocders
         odom0_config: [false, false, false,
                        false, false, false,
-                       true,  true,  true,
-                       false, false, false,
+                       true,  true, false,
+                       false, false, true,
                        false, false, false]
-        odom0_differential: true
-               
-        imu0: imu/ouster_uncompensated
+        odom0_differential: false
+        odom0_queue_size: 10
+ 
+        imu0: imu/ouster_uncompensated #Ouster IMU filtered
         imu0_config: [false, false, false,
                       true,  true,  true,
                       false, false, false,
@@ -53,7 +54,7 @@ ekf_filter_node:
         imu0_differential: true
         imu0_queue_size: 10
 
-        imu1: /vectornav/imu
+        imu1: /vectornav/imu #Orientation from vectornav Compass
         imu1_config: [false, false, false,
                       true,  true,  true,
                       false, false, false,
@@ -63,7 +64,7 @@ ekf_filter_node:
         imu1_differential: false
         imu1_queue_size: 10
 
-        imu2: imu/vectornav
+        imu2: imu/vectornav #Vectornav IMU filtered
         imu2_config: [false, false, false,
                       false, false, false,
                       false, false, false,
