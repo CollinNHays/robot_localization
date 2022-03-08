@@ -53,7 +53,7 @@ ekf_filter_node:
         #The Orientation/Magnetometer is solved for in the complementary filter
         #Ouster IMU covariances are filled in correctly in the Ouster ROS2 driver.
         #Sensor does not remove gravity internally
-        imu0: /ouster/imu/complementary_filter
+        imu0: ouster/imu/complementary_filter
         imu0_config: [false, false, false,
                       true,  true,  true,
                       false, false, false,
